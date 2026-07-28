@@ -1,0 +1,46 @@
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Variables secrètes
+.env
+.env.*
+!.env.example
+
+# VS Code et autres IDE
+.vscode/
+.idea/
+
+# Modèles d'intelligence artificielle
+models/face/*.onnx
+models/face/*.pt
+models/face/*.pth
+models/face/*.ckpt
+
+# Photos et données biométriques
+data/
+uploads/
+captures/
+snapshots/
+face_images/
+test_images_private/
+
+# Sauvegardes PostgreSQL
+backups/
+*.backup
+*.dump
+*.sql.gz
+*.sha256
+
+# Fichiers temporaires
+*.log
+*.tmp
+*.zip
+.DS_Store
+Thumbs.db

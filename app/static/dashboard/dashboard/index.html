@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONEE Face ID — Tableau de bord</title>
+  <link rel="stylesheet" href="/static/dashboard/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ONEE Branche Eau — Agadir</p>
+      <h1>Tableau de bord Face ID</h1>
+      <p id="generatedAt" class="subtitle">Chargement des données…</p>
+    </div>
+    <div class="header-actions">
+      <div class="account-box">
+        <span id="accountName">Compte connecté</span>
+        <span id="accountRole" class="badge"></span>
+        <button id="logoutButton" class="secondary-button" type="button">Déconnexion</button>
+      </div>
+      <div class="controls">
+      <label for="dayInput">Journée analysée</label>
+      <div class="control-row">
+        <input id="dayInput" type="date">
+        <button id="refreshButton" type="button">Actualiser</button>
+      </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="errorBox" class="error-box hidden" role="alert"></div>
+
+    <section aria-labelledby="statsTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Vue d’ensemble</p>
+          <h2 id="statsTitle">Indicateurs opérationnels</h2>
+        </div>
+        <span id="timezoneBadge" class="badge"></span>
+      </div>
+      <div id="statsGrid" class="stats-grid"></div>
+    </section>
+
+    <section class="two-columns">
+      <article class="panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Temps réel</p>
+            <h2>Personnes présentes</h2>
+          </div>
+          <span id="insideCount" class="badge"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Personne</th>
+                <th>Type</th>
+                <th>Unité / organisme</th>
+                <th>Entrée</th>
+              </tr>
+            </thead>
+            <tbody id="currentPresenceBody"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Reconnaissance</p>
+            <h2>Décisions de la journée</h2>
+          </div>
+        </div>
+        <div id="recognitionBreakdown" class="breakdown"></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">Évolution</p>
+          <h2>Activité des derniers jours</h2>
+        </div>
+      </div>
+      <div id="trendChart" class="trend-chart"></div>
+      <div class="legend" aria-label="Légende">
+        <span><i class="legend-dot entries"></i>Entrées</span>
+        <span><i class="legend-dot exits"></i>Sorties</span>
+        <span><i class="legend-dot matched"></i>Reconnaissances MATCHED</span>
+      </div>
+    </section>
+
+    <section class="two-columns">
+      <article class="panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Accueil</p>
+            <h2>Visites de la journée</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Horaire</th>
+                <th>Visiteur</th>
+                <th>Destination</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody id="visitsBody"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Historique</p>
+            <h2>Derniers pointages</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Heure</th>
+                <th>Personne</th>
+                <th>Événement</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody id="recentPresenceBody"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>Prototype de stage — système de pointage par reconnaissance faciale</span>
+    <a href="/docs">Ouvrir Swagger API</a>
+  </footer>
+
+  <script src="/static/dashboard/app.js" defer></script>
+</body>
+</html>

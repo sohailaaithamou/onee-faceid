@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONEE Face ID — Connexion</title>
+  <link rel="stylesheet" href="/static/dashboard/styles.css">
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-card" aria-labelledby="loginTitle">
+      <p class="eyebrow">ONEE Branche Eau — Agadir</p>
+      <h1 id="loginTitle">Connexion au dashboard</h1>
+      <p class="login-intro">Saisissez votre compte utilisateur pour accéder aux indicateurs Face ID.</p>
+
+      <div id="loginError" class="error-box hidden" role="alert"></div>
+
+      <form id="loginForm">
+        <label for="username">Nom d'utilisateur</label>
+        <input id="username" name="username" type="text" autocomplete="username" required>
+
+        <label for="password">Mot de passe</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+        <button id="loginButton" type="submit">Se connecter</button>
+      </form>
+    </section>
+  </main>
+  <script src="/static/dashboard/login.js" defer></script>
+</body>
+</html>
